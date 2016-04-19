@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :problems
   resources :roles
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
