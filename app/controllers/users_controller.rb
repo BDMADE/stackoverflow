@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :match_user,only: :edit
+  before_action :match_user,only: [:edit,:destroy]
   before_action :authorized?, except: [:signup,:create]
   before_action :admin?, except: [:signup,:create]
   before_action :is_not_admin?, except: [:signup,:create,:edit,:show,:update]

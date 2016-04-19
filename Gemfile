@@ -51,3 +51,5 @@ gem 'puma'
 gem 'rack-cache', :require => 'rack/cache'
 # install gem better_error
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
+
+gem 'will_paginate', '~> 3.0.6'

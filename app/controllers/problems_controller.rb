@@ -1,5 +1,9 @@
 class ProblemsController < ApplicationController
   before_action :set_problem, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?
+  
+  
+  layout 'adminLayout'
 
   # GET /problems
   # GET /problems.json
@@ -67,8 +71,11 @@ class ProblemsController < ApplicationController
       @problem = Problem.find(params[:id])
     end
 
+  
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def problem_params
-      params.require(:problem).permit(:name, :solution)
+      params.require(:problem).permit(:name, :solution, :user_id)
     end
 end

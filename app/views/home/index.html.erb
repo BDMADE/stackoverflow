@@ -18,10 +18,37 @@
 
 
 <div class="container">
-  <div class="jumbotron">
-    <h1>stackoverflow</h1>      
-    <p>This application is <strong>Ruby on Rails</strong> based authentication and authorized system for starting a project.</p>
+<h2>Stack Overflow</h2>
+  <div class="panel panel-default">
+    <div class="panel-body">
+    	<% @problems.each do |p| %>
+<div class="bs-callout bs-callout-danger"><h4><%= p.name %></h4></div>
+<div class="bs-callout bs-callout-info"><h4><%= p.solution %></h4></div>
+
+<p>Author: <%= p.user.first_name %>&nbsp;<%= p.user.last_name %></p>
+<% end %>
+
+<div class="row">
+      <div class="col-md-12 col-md-offset-10">
+
+        <div class="apple_pagination">
+
+          <%= will_paginate @problems, :container => false %>
+        </div>
+
+
+      </div>
+</div>
+
+
+
+    </div>
   </div>
+</div>
+
+
+
+  
   
 </div>
 
