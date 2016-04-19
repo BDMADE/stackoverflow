@@ -1,0 +1,8 @@
+# all commands are Listing Below :
+1. rails g controller Home index admin
+2. rails g scaffold Role name
+3. rails g scaffold User first_name last_name email password:digest remember_created_at:datetime:null role:references
+4. rails g controller sessions new create destroy
+5. rake db:migrate
+6. rake db:seed
+
