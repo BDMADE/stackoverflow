@@ -11,12 +11,12 @@
                         <div class="position-center">
                              <p>
                                 <strong>Name:</strong>
-                                 <%= @problem.name %>
+                                 <%= @problem.name.html_safe %>
                              </p>
 
                              <p>
                                 <strong>Name:</strong>
-                                 <%= @problem.solution %>
+                                 <%= @problem.solution.html_safe %>
                              </p>
 
                              <p>

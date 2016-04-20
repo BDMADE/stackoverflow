@@ -22,8 +22,8 @@
   <div class="panel panel-default">
     <div class="panel-body">
     	<% @problems.each do |p| %>
-<div class="bs-callout bs-callout-danger"><h4><%= p.name %></h4></div>
-<div class="bs-callout bs-callout-info"><h4><%= p.solution %></h4></div>
+<div class="bs-callout bs-callout-danger"><h4><b>Question:</b>&nbsp;<%= p.name.html_safe %></h4></div>
+<div class="bs-callout bs-callout-info"><h4><b>Solution:</b>&nbsp;<%= p.solution.html_safe %></h4></div>
 
 <p>Author: <%= p.user.first_name %>&nbsp;<%= p.user.last_name %></p>
 <% end %>

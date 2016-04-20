@@ -27,7 +27,7 @@
         <tbody>
     <% @problems.each do |problem| %>
       <tr>
-        <td><%= problem.name %></td>
+        <td><%= problem.name.html_safe %></td>
         <td><%= problem.solution %></td>
         <td><%= problem.user.last_name %></td>
         <td><%= link_to 'Show',problem %></td>
