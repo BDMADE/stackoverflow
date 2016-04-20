@@ -94,10 +94,9 @@ class UsersController < ApplicationController
   # it matches current user with database and prevents to edit/update other user profile
   def match_user
     if not admin?
-       user= User.find(current_user)
-
-          if not user.id==set_user.id
-            redirect_to admin_url,notice: 'You have not permission to grant this page !'
+       
+          if not current_user.id==set_user.id
+            redirect_to admin_url,alert: 'You have not permission to grant this page !'
           end
     end
   

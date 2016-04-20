@@ -1,7 +1,7 @@
 class ProblemsController < ApplicationController
   before_action :set_problem, only: [:show, :edit, :update, :destroy]
   before_action :authorized?
-  
+  before_action :match_user,only: [:edit,:destroy]
   
   layout 'adminLayout'
 
@@ -71,7 +71,16 @@ class ProblemsController < ApplicationController
       @problem = Problem.find(params[:id])
     end
 
-  
+  ## match the user
+   def match_user
+     
+    if not admin?
+      if not (current_user.id==set_problem.user_id)
+        redirect_to admin_path, alert: 'You do not have permission to access this section !'       
+      end
+    end
+
+   end
 
 
     # Never trust parameters from the scary internet, only allow the white list through.
